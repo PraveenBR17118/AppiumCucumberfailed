@@ -14,7 +14,7 @@ public class BaseClass
 {
 
 
-    public AndroidDriver<AndroidElement> driver;
+    public AndroidDriver driver;
     public static Logger logger;
     public Properties configProp;
     public LoginPage lp;

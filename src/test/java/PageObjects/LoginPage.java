@@ -1,17 +1,18 @@
 package PageObjects;
 
-import io.appium.java_client.MobileElement;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.*;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage
 {
-    public AndroidDriver<AndroidElement> ldriver;
-
-    public LoginPage()
-    { }
+    public AndroidDriver<AndroidElement> lacier;
 
 //    public LoginPage(AndroidDriver<AndroidElement> driver)
 //    {
@@ -21,9 +22,8 @@ public class LoginPage
 
     public LoginPage(AndroidDriver<AndroidElement> driver)
     {
-        ldriver = driver;
-        PageFactory.initElements(this.ldriver , this);
-
+        this.lacier = driver;
+        PageFactory.initElements(lacier,this);
     }
 
 //    IOSDriver<IOSElement> iosdriver1;
@@ -39,7 +39,11 @@ public class LoginPage
     @iOSXCUITFindAll({
             @iOSXCUITBy(xpath = "(//XCUIElementTypeOther[@name=\"START NOW\"])[11]")
     })
-    public MobileElement StartButton;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement StartButton;
 
     public LoginPage tapStartButton()
     {
@@ -47,30 +51,14 @@ public class LoginPage
         return this;
     }
 
-    @AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Email']")
-    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Email\"])[3]/XCUIElementTypeTextField")
-    public MobileElement email1;
-
-    public LoginPage sendEmail1()
-    {
-        email1.isEnabled();
-        return this;
-    }
 
     @AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Email']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Email\"])[3]/XCUIElementTypeTextField")
-    public MobileElement email2;
-
-    public LoginPage sendEmail2()
-    {
-        email2.click();
-        return this;
-    }
-
-
-    @AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Email']")
-    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Email\"])[3]/XCUIElementTypeTextField")
-    public MobileElement email;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.EditText[@text = 'Email']")
+    })
+    @CacheLookup
+    public WebElement email;
 
     public LoginPage sendEmail(String a)
     {
@@ -90,7 +78,14 @@ public class LoginPage
             @iOSXCUITBy(iOSNsPredicate = "x == '56' AND y == '296'"),
             @iOSXCUITBy(id ="19000000-0000-0000-3E06-000000000000")
     })
-    public MobileElement clearEmail;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.EditText[@text = 'Email']"),
+            @FindBy(xpath = "//*[@class='android.widget.EditText' and @bounds='[146,1018][972,1118]']"),
+            @FindBy(xpath = "//*[@class='android.widget.EditText' and @bounds='[147,1019][971,1117]']")
+
+    })
+    @CacheLookup
+    public WebElement clearEmail;
 
     public LoginPage clrEmail()
     {
@@ -98,39 +93,15 @@ public class LoginPage
         return this;
     }
 
-    @AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Password']")
-    @iOSXCUITFindAll({
-            @iOSXCUITBy(xpath = "(//XCUIElementTypeOther[@name=\"Password\"])[2]")
-
-    })
-    public MobileElement password1;
-
-    public LoginPage sendPassword1()
-    {
-        password1.isEnabled();
-        return this;
-    }
 
     @AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Password']")
     @iOSXCUITFindAll({
             @iOSXCUITBy(xpath = "(//XCUIElementTypeOther[@name=\"Password\"])[2]")
 
     })
-    public MobileElement password2;
-
-    public LoginPage sendPassword2()
-    {
-        password2.click();
-        return this;
-    }
-
-
-    @AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Password']")
-    @iOSXCUITFindAll({
-            @iOSXCUITBy(xpath = "(//XCUIElementTypeOther[@name=\"Password\"])[2]")
-
-    })
-    public MobileElement password;
+    @FindBy(xpath = "//android.widget.EditText[@text = 'Password']")
+    @CacheLookup
+    public WebElement password;
 
     public LoginPage sendPassword(String a)
     {
@@ -152,7 +123,14 @@ public class LoginPage
             @iOSXCUITBy(xpath = "(//XCUIElementTypeOther[@name=\"Email\"])[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeSecureTextField\""),
             @iOSXCUITBy(id ="1B000000-0000-0000-3E06-000000000000")
     })
-    public MobileElement clearPassword;
+    @FindAll({
+            @FindBy(xpath = "//*[@class='android.widget.EditText' and @bounds='[146,1197][972,1297]']"),
+            @FindBy(xpath = "//*[@class='android.widget.EditText' and @bounds='[146,1156][972,1256]']"),
+            @FindBy(xpath = "//*[@class='android.widget.EditText' and @bounds='[147,1198][971,1295]']"),
+            @FindBy(xpath = "(//android.widget.EditText)[1]"),
+    })
+    @CacheLookup
+    public WebElement clearPassword;
 
     public LoginPage clrPassword()
     {
@@ -161,34 +139,28 @@ public class LoginPage
     }
 
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Login']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text ='Login']")
     @iOSXCUITFindAll({
             @iOSXCUITBy(accessibility = "Login"),
             @iOSXCUITBy(xpath ="//XCUIElementTypeOther[@name=\"Login\"]")
     })
-    public MobileElement login1;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='Login']"),
+            @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.widget.TextView"),
+            @FindBy(id = "8e07b8da-a1e8-41d4-a7d9-bec4db524bcc"),
+            @FindBy(xpath = "(//android.view.ViewGroup)[8]"),
+            @FindBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[699,1355][792,1399]']")
+
+    })
+    @CacheLookup
+    public WebElement login1;
 
     public LoginPage tapLogin1()
     {
-        login1.isEnabled();
+        login1.click();
         return this;
     }
-
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Login']")
-    //@iOSXCUITBy(xpath = "//XCUIElementTypeOther[@name=\"Login\"]")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='Login']")
-//    @iOSXCUITFindAll({
-//            @iOSXCUITBy(accessibility = "Login"),
-//            @iOSXCUITBy(xpath ="//XCUIElementTypeOther[@name=\"Login\"]")
-//    })
-
-    public MobileElement login;
-
-    public LoginPage tapLogin()
-    {
-        login.click();
-        return this;
-    }
+    
 
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Forgot Password ?']")
@@ -198,7 +170,11 @@ public class LoginPage
             @iOSXCUITBy(accessibility = "Forgot Password ?"),
             @iOSXCUITBy(xpath ="//XCUIElementTypeOther[@name=\"Forgot Password ?\"]")
     })
-    public MobileElement ForgotPassword;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text = 'Forgot Password ?']")
+    })
+    @CacheLookup
+    public WebElement ForgotPassword;
 
     public LoginPage taoOnForgotPassword()
     {
@@ -211,7 +187,11 @@ public class LoginPage
             @iOSXCUITBy(accessibility = "New User"),
             @iOSXCUITBy(xpath = "//XCUIElementTypeOther[@name=\"New User\"]")
     })
-    public MobileElement NewUserButton;
+    @FindAll({
+            @FindBy(xpath = "//android.view.ViewGroup/android.widget.TextView[@text = 'New User']")
+    })
+    @CacheLookup
+    public WebElement NewUserButton;
 
     public LoginPage tapNewUserButton()
     {
@@ -224,7 +204,7 @@ public class LoginPage
             @iOSXCUITBy(accessibility = "Request Prayer"),
             @iOSXCUITBy(xpath = "//XCUIElementTypeOther[@name=\"Request Prayer \"]")
     })
-    public MobileElement RequestPrayer;
+    public WebElement RequestPrayer;
 
     public LoginPage tapRequestPrayer()
     {

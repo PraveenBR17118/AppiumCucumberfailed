@@ -1,22 +1,30 @@
 package PageObjects;
 
-import io.appium.java_client.MobileElement;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
 import io.appium.java_client.pagefactory.*;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.*;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage
 {
-    AndroidDriver<AndroidElement> driver;
+    AndroidDriver<AndroidElement> ldriver;
+
 
     public HomePage(AndroidDriver<AndroidElement> driver)
     {
-        PageFactory.initElements(new AppiumFieldDecorator(driver) ,this);
+        this.ldriver = driver;
+        PageFactory.initElements(ldriver,this);
     }
+
+//    public HomePage(AndroidDriver<AndroidElement> driver)
+//    {
+//        PageFactory.initElements(new AppiumFieldDecorator(driver) ,this);
+//    }
 
     IOSDriver<IOSElement> iosdriver1;
 
@@ -33,21 +41,62 @@ public class HomePage
                     //@AndroidBy(xpath = "//*[@class='android.widget.EditText' and @bounds='[147,1019][971,1117]']")
             })
     @iOSXCUITFindAll({
-            @iOSXCUITBy( xpath = "//XCUIElementTypeButton[@name=\"Settings, tab, 4 of 4\"]"),
+            @iOSXCUITBy( xpath = "//XCUIElementTypeButton[@name='Settings, tab, 4 of 4']"),
             @iOSXCUITBy(accessibility = "Settings, tab, 4 of 4")
             //@iOSXCUITBy(iOSNsPredicate = "x == '37' AND y == '350'")
     })
-    public MobileElement PrayForOtherTitle;
+    @FindAll({
+            @FindBy(id = "0db92e09-9351-47e5-959d-016196ef159d"),
+            @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView"),
+    })
+    @CacheLookup
+    public WebElement PrayForOtherTitle;
 
-    public HomePage PrayForOtherTitleText()
+    public String PrayForOtherTitleText()
     {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        PrayForOtherTitle.getText();
-        return this;
+        String fff1 = PrayForOtherTitle.getAttribute("name");
+        return fff1;
+        //return this;
+    }
+
+    @AndroidFindAll
+            ({
+                    @AndroidBy(xpath = "//android.widget.TextView.[@text='Pray for Others']"),
+                    @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[327,472][737,553]']"),
+                    @AndroidBy(xpath = "(//android.widget.TextView)[0]")
+                    //@AndroidBy(xpath = "//*[@class='android.widget.EditText' and @bounds='[147,1019][971,1117]']")
+            })
+    @iOSXCUITFindAll({
+            @iOSXCUITBy( xpath = "//XCUIElementTypeButton[@name='Settings, tab, 4 of 4']"),
+            @iOSXCUITBy(accessibility = "Settings, tab, 4 of 4")
+            //@iOSXCUITBy(iOSNsPredicate = "x == '37' AND y == '350'")
+    })
+    @FindAll({
+            @FindBy(id = "d8c5a864-40de-41a6-b45b-9f294ac93653"),
+            @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.TextView[1]"),
+            @FindBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[151,609][231,656]']")
+    })
+    @CacheLookup
+    public WebElement AllValue;
+
+    public int getAllValue()
+    {
+        try {
+            Thread.sleep(2000);
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+        String fff2 = AllValue.getAttribute("name");
+        int num = Integer.parseInt(fff2);
+        return num;
+        //return this;
     }
 
     @AndroidFindAll
@@ -56,7 +105,11 @@ public class HomePage
                     @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[368,1447][625,1494]']"),
             })
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"I prayed for you!\"])[2]'")
-    public MobileElement IPrayedForzYouGetText;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement IPrayedForzYouGetText;
 
     public HomePage getIPrayedForzYouGetText()
     {
@@ -70,7 +123,12 @@ public class HomePage
                     @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[368,1447][625,1494]']"),
             })
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"I prayed for you!\"])[2]'")
-    public MobileElement IPrayedForzYou;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text='I prayed for you!']"),
+            @FindBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[368,1447][625,1494]']"),
+    })
+    @CacheLookup
+    public WebElement IPrayedForzYou;
 
     public HomePage tapIPrayedForzYouCheckBox()
     {
@@ -88,7 +146,11 @@ public class HomePage
             @iOSXCUITBy(accessibility = "Refer to Pastor")
             //@iOSXCUITBy(iOSNsPredicate = "x == '37' AND y == '350'")
     })
-    public MobileElement ReferToPosterButton;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement ReferToPosterButton;
 
     public HomePage tapReferToPosterButton() throws InterruptedException {
         Thread.sleep(1000);
@@ -106,7 +168,11 @@ public class HomePage
             @iOSXCUITBy(accessibility = "Skip")
             //@iOSXCUITBy(iOSNsPredicate = "x == '37' AND y == '350'")
     })
-    public MobileElement SkipButton;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement SkipButton;
 
     public HomePage tapSkipButton() throws InterruptedException {
         Thread.sleep(1000);
@@ -120,7 +186,11 @@ public class HomePage
             //@AndroidBy(xpath = "(//android.view.ViewGroup)[9]")
     })
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Pray for Others\"]/XCUIElementTypeOther")
-    public MobileElement FilterButton;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement FilterButton;
 
     public HomePage tapFilterButton() throws InterruptedException {
         Thread.sleep(1000);
@@ -134,7 +204,11 @@ public class HomePage
                     @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[151,609][231,656]']"),
             })
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"0 ALL\"])[2]")
-    public MobileElement AllButtonSize;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement AllButtonSize;
 
     public HomePage getAllButtonSize() throws InterruptedException {
         Thread.sleep(1000);
@@ -148,7 +222,11 @@ public class HomePage
                     @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[151,609][231,656]']"),
             })
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"0 ALL\"])[2]")
-    public MobileElement AllButtonText;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement AllButtonText;
 
     public HomePage getAllButtonText() throws InterruptedException {
         Thread.sleep(1000);
@@ -162,7 +240,11 @@ public class HomePage
                     @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[161,656][222,703]']"),
             })
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"0 ALL\"])[2]")
-    public MobileElement AllButton;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement AllButton;
 
     public HomePage tapAllButton() throws InterruptedException {
         Thread.sleep(1000);
@@ -176,7 +258,11 @@ public class HomePage
                     @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[385,609][465,656]']"),
             })
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"0 Air1\"])[2]")
-    public MobileElement AirButtonCount;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement AirButtonCount;
 
     public HomePage getAirButtonCount() throws InterruptedException {
         Thread.sleep(1000);
@@ -190,7 +276,11 @@ public class HomePage
                     @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[624,656][688,703]']"),
             })
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"0 Air1\"])[2]")
-    public MobileElement AirButton;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement AirButton;
 
     public HomePage tapAirButton() throws InterruptedException {
         Thread.sleep(1000);
@@ -204,7 +294,11 @@ public class HomePage
                     @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[626,609][686,656]']"),
             })
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"0 Air1\"])[2]")
-    public MobileElement Pray4OneButtonCount;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement Pray4OneButtonCount;
 
     public HomePage getPray4OneButtonCount() throws InterruptedException {
         Thread.sleep(1000);
@@ -217,7 +311,11 @@ public class HomePage
             @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[814,656][965,703]']"),
     })
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"0 Pray4One\"])[2]")
-    public MobileElement Pray4OneButton;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement Pray4OneButton;
 
     public HomePage tapPray4OneButton() throws InterruptedException {
         Thread.sleep(1000);
@@ -230,7 +328,11 @@ public class HomePage
             @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[367,656][482,703]']"),
     })
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"0 K-LOVE\"])[2]")
-    public MobileElement KLoveButton;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement KLoveButton;
 
     public HomePage tapKLoveButton() throws InterruptedException {
         Thread.sleep(1000);
@@ -243,7 +345,11 @@ public class HomePage
             @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[958,822][980,874]']")
     })
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"0 K-LOVE\"])[2]")
-    public MobileElement PrayingHands;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement PrayingHands;
 
     public HomePage getPrayingHandSize() throws InterruptedException {
         Thread.sleep(1000);
@@ -256,7 +362,11 @@ public class HomePage
             @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[0,1999][270,2037]']"),
     })
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name=\"Pray4others, tab, 1 of 4\"]")
-    public MobileElement ForOtherButton;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement ForOtherButton;
 
     public HomePage tapForOtherButton() throws InterruptedException {
         Thread.sleep(1000);
@@ -269,7 +379,11 @@ public class HomePage
             @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[270,1999][540,2037]']"),
     })
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name=\"Pray4me, tab, 2 of 4\"]")
-    public MobileElement ForMeButton;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement ForMeButton;
 
     public HomePage tapForMeButton() throws InterruptedException {
         Thread.sleep(1000);
@@ -282,7 +396,11 @@ public class HomePage
             @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[270,1999][540,2037]']")
     })
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name=\"My Impact, tab, 3 of 4\"]")
-    public MobileElement MyImpactButton;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement MyImpactButton;
 
     public HomePage tapMyImpactButton() throws InterruptedException {
         Thread.sleep(1000);
@@ -301,7 +419,11 @@ public class HomePage
             @iOSXCUITBy(accessibility = "Settings, tab, 4 of 4")
             //@iOSXCUITBy(iOSNsPredicate = "x == '37' AND y == '350'")
     })
-    public MobileElement SettingsButton;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement SettingsButton;
 
     public HomePage tapSettingsButton()
     {
@@ -319,7 +441,11 @@ public class HomePage
             @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[173,1849][677,1903]']")
     })
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name=\"My Impact, tab, 3 of 4\"]")
-    public MobileElement PrayersIHavePrayedToday;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement PrayersIHavePrayedToday;
 
     public HomePage tapPrayersIHavePrayedToday() throws InterruptedException {
         Thread.sleep(1000);
@@ -332,7 +458,11 @@ public class HomePage
             @AndroidBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[173,1849][677,1903]']")
     })
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name=\"My Impact, tab, 3 of 4\"]")
-    public MobileElement PrayersIHavePrayedTodaySize;
+    @FindAll({
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+    })
+    @CacheLookup
+    public WebElement PrayersIHavePrayedTodaySize;
 
     public HomePage getPrayersIHavePrayedTodaySize() throws InterruptedException {
         Thread.sleep(1000);

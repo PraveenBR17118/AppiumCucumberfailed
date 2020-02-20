@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88a2ac65-8e86-4fb6-aaec-0218df7c149d" name="Default Changelist" comment="" />
+    <list default="true" id="88a2ac65-8e86-4fb6-aaec-0218df7c149d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Features/Pray4One.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/Pray4One.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-release (1).apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app1-release.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/BaseClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/BaseClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Pray4OneSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Pray4OneSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/testRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/testRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/LoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/stepDefinitions/BaseClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/stepDefinitions/BaseClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/stepDefinitions/Pray4OneSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/stepDefinitions/Pray4OneSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/testRunner/testRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testRunner/testRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/formatter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/jquery-1.8.2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/report.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/style.css" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +37,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -24,6 +49,7 @@
   </component>
   <component name="ProjectId" id="1XySDiXYfryiyHpPXfRnaS8XRV6" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -41,7 +67,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.testRunner">
+  <component name="RunManager" selected="TestNG.testRunner">
     <configuration name="Scenario: Test Login" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/Features/Pray4One.feature" />
@@ -75,8 +101,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="testRunner" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="AppiumCucumber" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testRunner.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testRunner" />
+      <option name="MAIN_CLASS_NAME" value="testRunner.testRunner" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.testRunner" />
         <item itemvalue="JUnit.testRunner" />
         <item itemvalue="Cucumber java.Scenario: Test Login" />
       </list>
@@ -94,5 +138,18 @@
       <updated>1582016723845</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

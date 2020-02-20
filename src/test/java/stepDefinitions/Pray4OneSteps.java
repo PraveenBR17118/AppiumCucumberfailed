@@ -2,24 +2,21 @@ package stepDefinitions;
 
 
 import PageObjects.*;
+import cucumber.api.java.*;
 import cucumber.api.java.en.*;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import org.junit.Before;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.FileInputStream;
-import java.io.IOException;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class Pray4OneSteps extends BaseClass
+public class Pray4OneSteps
 {
 
 
@@ -28,21 +25,20 @@ public class Pray4OneSteps extends BaseClass
 
     }
 
+    private AndroidDriver driver;
+    private static Logger logger;
+    private LoginPage lp;
+
 
     @Before
-    public void setup() throws IOException
+    public void setup()
     {
         logger= Logger.getLogger("SeleniumCucumber"); //Added logger
         PropertyConfigurator.configure("log4j.properties");//Added logger
 
-        configProp=new Properties();
-        FileInputStream configPropfile=new FileInputStream("config.properties");
-        configProp.load(configPropfile);
-
-
     }
 
-    @Given("Open the desired device")
+    @Given("Open the Android device")
     public void open_the_desired_device() throws MalformedURLException
     {
         //File AppLocation = new File("src");
@@ -54,10 +50,11 @@ public class Pray4OneSteps extends BaseClass
         capability.setCapability("platformVersion","10.0");
         //capability.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
         capability.setCapability(MobileCapabilityType.APP, "/Users/praveen/Documents/IntelliJidea/Cucumber/AppiumCucumber/app/app1-release.apk");
-        AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>
+        driver = new AndroidDriver<AndroidElement>
                 (new URL("http://127.0.0.1:4723/wd/hub"), capability);
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        waitVar = new WebDriverWait(driver,10);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        logger.info("Appium Connection is establishing");
+        //WebDriverWait waitVar = new WebDriverWait(driver, 10);
 
 
 
@@ -67,56 +64,76 @@ public class Pray4OneSteps extends BaseClass
     public void enter_the_login_details()
     {
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //LoginPage lp = new LoginPage(driver);
+        logger.info(">>>>>>>>>>>>Opened The Application<<<<<<<<<<<<<<<<");
+
         lp = new LoginPage(driver);
         lp.tapStartButton();
         lp.sendEmail("praveenbr.1991@gmail.com");
         lp.sendPassword("PPrrkk@1718");
-        try
-        {
-            Thread.sleep(3000);
-        }
-        catch (InterruptedException e)
-        {
-            e.printStackTrace();
-        }
+        logger.info(">>>>>>>>>>>>>>>Endered the login details<<<<<<<<<<<<<<<<<<<<<<");
 
-
-
-//        driver.findElementByXPath("//android.widget.TextView[@text ='START NOW']").click();
-//        driver.findElementByXPath("//android.widget.EditText[@text = 'Email']").sendKeys("praveenbr.1991@gmail.com");
-//        driver.findElementByXPath("//android.widget.EditText[@text = 'Password']").sendKeys("PPrrkk@1718");
     }
 
     @Then("Click on login")
     public void click_on_login()
     {
+        //lp = new LoginPage(driver);
+        lp.tapLogin1();
+        logger.info("Clicked Login");
         try
         {
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         }
         catch (InterruptedException e)
         {
             e.printStackTrace();
         }
 
-        lp.tapLogin1();
-        //driver.findElementByXPath("//android.widget.TextView[@text = 'Login']").click();
     }
 
     @Then("verify the HomePage")
     public void verify_the_HomePage()
     {
+        HomePage hp = new HomePage(driver);
+       String iff = hp.PrayForOtherTitleText();
+       System.out.println(iff);
+       logger.info(">>>>>>>>>Got Home page Text<<<<<<<<<");
+       int iffnum = hp.getAllValue();
+       System.out.println(iffnum);
+       hp.tapIPrayedForzYouCheckBox();
         try
         {
-            Thread.sleep(3000);
+            Thread.sleep(10000);
         }
         catch (InterruptedException e)
         {
             e.printStackTrace();
         }
+        int iffnum1 = hp.getAllValue();
+        System.out.println(iffnum1);
+        if(iffnum-1 == iffnum1)
+       {
+            logger.info("Count has been decreased");
+            Assert.assertTrue(true,"condition is passed");
+       }
+       else
+           {
+               Assert.assertFalse(false,"Conditon is failed");
+           }
 
-        //hp.PrayForOtherTitleText();
-        driver.findElementByXPath("//android.widget.TextView.[@text='Pray for Others']").isDisplayed();
+    }
+
+    @After
+    public void tearDown()
+    {
+        try
+        {
+            Thread.sleep(4000);
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+        driver.quit();
     }
 }
