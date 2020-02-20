@@ -85,3 +85,23 @@
 2020-02-20 12:13:42,904 - SeleniumCucumber -INFO - Clicked Login
 2020-02-20 12:13:59,496 - SeleniumCucumber -INFO - >>>>>>>>>Got Home page Text<<<<<<<<<
 2020-02-20 12:14:24,775 - SeleniumCucumber -INFO - Count has been decreased
+2020-02-20 14:46:19,553 - SeleniumCucumber -INFO - Appium Connection is establishing
+2020-02-20 14:46:19,574 - SeleniumCucumber -INFO - >>>>>>>>>>>>Opened The Application<<<<<<<<<<<<<<<<
+2020-02-20 15:22:18,400 - SeleniumCucumber -INFO - Appium Connection is establishing
+2020-02-20 15:22:18,421 - SeleniumCucumber -INFO - >>>>>>>>>>>>Opened The Application<<<<<<<<<<<<<<<<
+2020-02-20 15:36:22,799 - SeleniumCucumber -INFO - Appium Connection is establishing
+2020-02-20 15:36:22,811 - SeleniumCucumber -INFO - >>>>>>>>>>>>Opened The Application<<<<<<<<<<<<<<<<
+2020-02-20 15:48:43,671 - SeleniumCucumber -INFO - Appium Connection is establishing
+2020-02-20 15:48:43,683 - SeleniumCucumber -INFO - >>>>>>>>>>>>Opened The iOS Application<<<<<<<<<<<<<<<<
+2020-02-20 15:49:29,061 - SeleniumCucumber -INFO - Endered the login details
+2020-02-20 15:50:33,601 - SeleniumCucumber -INFO - Clicked iOS Login
+2020-02-20 15:59:58,653 - SeleniumCucumber -INFO - Appium Connection is establishing
+2020-02-20 15:59:58,669 - SeleniumCucumber -INFO - >>>>>>>>>>>>Opened The iOS Application<<<<<<<<<<<<<<<<
+2020-02-20 16:01:22,161 - SeleniumCucumber -INFO - Appium Connection is establishing
+2020-02-20 16:01:22,168 - SeleniumCucumber -INFO - >>>>>>>>>>>>Opened The iOS Application<<<<<<<<<<<<<<<<
+2020-02-20 16:13:49,596 - SeleniumCucumber -INFO - Appium Connection is establishing
+2020-02-20 16:13:49,617 - SeleniumCucumber -INFO - >>>>>>>>>>>>Opened The iOS Application<<<<<<<<<<<<<<<<
+2020-02-20 16:14:33,357 - SeleniumCucumber -INFO - Endered the login details
+2020-02-20 16:15:35,214 - SeleniumCucumber -INFO - Clicked iOS Login1
+2020-02-20 16:15:36,146 - SeleniumCucumber -INFO - Clicked iOS Login2
+2020-02-20 16:16:17,395 - SeleniumCucumber -INFO - >>>>>>>>>Got iOS Home page Text<<<<<<<<<

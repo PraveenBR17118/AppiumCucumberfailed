@@ -85,3 +85,23 @@
 2020-02-20 12:13:42,904 [main] INFO SeleniumCucumber - Clicked Login
 2020-02-20 12:13:59,496 [main] INFO SeleniumCucumber - >>>>>>>>>Got Home page Text<<<<<<<<<
 2020-02-20 12:14:24,775 [main] INFO SeleniumCucumber - Count has been decreased
+2020-02-20 14:46:19,553 [main] INFO SeleniumCucumber - Appium Connection is establishing
+2020-02-20 14:46:19,574 [main] INFO SeleniumCucumber - >>>>>>>>>>>>Opened The Application<<<<<<<<<<<<<<<<
+2020-02-20 15:22:18,400 [main] INFO SeleniumCucumber - Appium Connection is establishing
+2020-02-20 15:22:18,421 [main] INFO SeleniumCucumber - >>>>>>>>>>>>Opened The Application<<<<<<<<<<<<<<<<
+2020-02-20 15:36:22,799 [main] INFO SeleniumCucumber - Appium Connection is establishing
+2020-02-20 15:36:22,811 [main] INFO SeleniumCucumber - >>>>>>>>>>>>Opened The Application<<<<<<<<<<<<<<<<
+2020-02-20 15:48:43,671 [main] INFO SeleniumCucumber - Appium Connection is establishing
+2020-02-20 15:48:43,683 [main] INFO SeleniumCucumber - >>>>>>>>>>>>Opened The iOS Application<<<<<<<<<<<<<<<<
+2020-02-20 15:49:29,061 [main] INFO SeleniumCucumber - Endered the login details
+2020-02-20 15:50:33,601 [main] INFO SeleniumCucumber - Clicked iOS Login
+2020-02-20 15:59:58,653 [main] INFO SeleniumCucumber - Appium Connection is establishing
+2020-02-20 15:59:58,669 [main] INFO SeleniumCucumber - >>>>>>>>>>>>Opened The iOS Application<<<<<<<<<<<<<<<<
+2020-02-20 16:01:22,161 [main] INFO SeleniumCucumber - Appium Connection is establishing
+2020-02-20 16:01:22,168 [main] INFO SeleniumCucumber - >>>>>>>>>>>>Opened The iOS Application<<<<<<<<<<<<<<<<
+2020-02-20 16:13:49,596 [main] INFO SeleniumCucumber - Appium Connection is establishing
+2020-02-20 16:13:49,617 [main] INFO SeleniumCucumber - >>>>>>>>>>>>Opened The iOS Application<<<<<<<<<<<<<<<<
+2020-02-20 16:14:33,357 [main] INFO SeleniumCucumber - Endered the login details
+2020-02-20 16:15:35,214 [main] INFO SeleniumCucumber - Clicked iOS Login1
+2020-02-20 16:15:36,146 [main] INFO SeleniumCucumber - Clicked iOS Login2
+2020-02-20 16:16:17,395 [main] INFO SeleniumCucumber - >>>>>>>>>Got iOS Home page Text<<<<<<<<<

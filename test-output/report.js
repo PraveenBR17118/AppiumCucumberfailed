@@ -7,67 +7,43 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 161708240,
+  "duration": 78281750,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 3,
+  "line": 11,
   "name": "Test Login",
   "description": "",
   "id": "pray4one-login;test-login",
   "type": "scenario",
-  "keyword": "Scenario"
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "line": 10,
+      "name": "@IOSAppium"
+    }
+  ]
 });
 formatter.step({
-  "line": 4,
-  "name": "Open the Android device",
+  "line": 12,
+  "name": "Open the IOS device",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 5,
-  "name": "Enter the login details",
+  "line": 13,
+  "name": "Enter the IOS login details",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 6,
-  "name": "Click on login",
+  "line": 14,
+  "name": "Click on IOS login",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 7,
-  "name": "verify the HomePage",
+  "line": 15,
+  "name": "verify the IOS HomePage",
   "keyword": "And "
 });
 formatter.match({
-  "location": "Pray4OneSteps.open_the_desired_device()"
-});
-formatter.result({
-  "duration": 18909315004,
-  "status": "passed"
-});
-formatter.match({
-  "location": "Pray4OneSteps.enter_the_login_details()"
-});
-formatter.result({
-  "duration": 7430147771,
-  "status": "passed"
-});
-formatter.match({
-  "location": "Pray4OneSteps.click_on_login()"
-});
-formatter.result({
-  "duration": 5694426732,
-  "status": "passed"
-});
-formatter.match({
-  "location": "Pray4OneSteps.verify_the_HomePage()"
-});
-formatter.result({
-  "duration": 36868664109,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 4873149098,
-  "status": "passed"
-});
+  "location": "Pray4OneiOSSteps.open_the_IOS_device()"
 });

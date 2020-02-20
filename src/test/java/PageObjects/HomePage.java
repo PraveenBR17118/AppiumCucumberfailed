@@ -26,11 +26,12 @@ public class HomePage
 //        PageFactory.initElements(new AppiumFieldDecorator(driver) ,this);
 //    }
 
-    IOSDriver<IOSElement> iosdriver1;
+    IOSDriver<IOSElement> iOSdriver;
 
-    public HomePage(IOSDriver<IOSElement> iosdriver1)
+    public HomePage(IOSDriver<IOSElement> driver)
     {
-        PageFactory.initElements(new AppiumFieldDecorator(iosdriver1) ,this);
+        this.iOSdriver = driver;
+        PageFactory.initElements(iOSdriver,this);
     }
 
     @AndroidFindAll
@@ -48,6 +49,8 @@ public class HomePage
     @FindAll({
             @FindBy(id = "0db92e09-9351-47e5-959d-016196ef159d"),
             @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView"),
+            @FindBy(xpath = "//XCUIElementTypeButton[@name='Settings, tab, 4 of 4']"),
+            //@iOSXCUITBy(accessibility = "Settings, tab, 4 of 4")
     })
     @CacheLookup
     public WebElement PrayForOtherTitle;
@@ -79,7 +82,8 @@ public class HomePage
     @FindAll({
             @FindBy(id = "d8c5a864-40de-41a6-b45b-9f294ac93653"),
             @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.TextView[1]"),
-            @FindBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[151,609][231,656]']")
+            @FindBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[151,609][231,656]']"),
+            @FindBy(xpath = "//XCUIElementTypeButton[@name='Settings, tab, 4 of 4']"),
     })
     @CacheLookup
     public WebElement AllValue;
@@ -106,7 +110,8 @@ public class HomePage
             })
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"I prayed for you!\"])[2]'")
     @FindAll({
-            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']"),
+            @FindBy(xpath = "(//XCUIElementTypeOther[@name=\"I prayed for you!\"])[2]'")
     })
     @CacheLookup
     public WebElement IPrayedForzYouGetText;
@@ -126,6 +131,7 @@ public class HomePage
     @FindAll({
             @FindBy(xpath = "//android.widget.TextView[@text='I prayed for you!']"),
             @FindBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[368,1447][625,1494]']"),
+            @FindBy(xpath = "(//XCUIElementTypeOther[@name='I prayed for you!'])[2]'")
     })
     @CacheLookup
     public WebElement IPrayedForzYou;
@@ -147,7 +153,8 @@ public class HomePage
             //@iOSXCUITBy(iOSNsPredicate = "x == '37' AND y == '350'")
     })
     @FindAll({
-            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']"),
+            @FindBy( xpath = "//XCUIElementTypeOther[@name=\"Refer to Pastor\"]"),
     })
     @CacheLookup
     public WebElement ReferToPosterButton;
@@ -169,7 +176,8 @@ public class HomePage
             //@iOSXCUITBy(iOSNsPredicate = "x == '37' AND y == '350'")
     })
     @FindAll({
-            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']"),
+            @FindBy( xpath = "//XCUIElementTypeOther[@name=\"Skip \"]"),
     })
     @CacheLookup
     public WebElement SkipButton;
@@ -187,7 +195,8 @@ public class HomePage
     })
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Pray for Others\"]/XCUIElementTypeOther")
     @FindAll({
-            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']"),
+            @FindBy(xpath = "//XCUIElementTypeOther[@name=\"Pray for Others\"]/XCUIElementTypeOther")
     })
     @CacheLookup
     public WebElement FilterButton;
@@ -205,7 +214,8 @@ public class HomePage
             })
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"0 ALL\"])[2]")
     @FindAll({
-            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']"),
+            @FindBy(xpath = "(//XCUIElementTypeOther[@name=\"0 ALL\"])[2]")
     })
     @CacheLookup
     public WebElement AllButtonSize;

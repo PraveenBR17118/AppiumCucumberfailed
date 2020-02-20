@@ -2,27 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88a2ac65-8e86-4fb6-aaec-0218df7c149d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Features/Pray4One.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Features/Pray4One.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-release (1).apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1-release.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/application.html" beforeDir="false" afterPath="$PROJECT_DIR$/log/application.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/application.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/testlog.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/testlog.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PageObjects/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageObjects/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/BaseClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/BaseClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Pray4OneSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Pray4OneSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/testRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/testRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/HomePage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/PageObjects/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PageObjects/LoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stepDefinitions/BaseClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/stepDefinitions/BaseClass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/stepDefinitions/Pray4OneSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/stepDefinitions/Pray4OneSteps.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/testRunner/testRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testRunner/testRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/formatter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/jquery-1.8.2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/report.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/report.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -142,6 +135,31 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/Users/praveen/Documents/IntelliJidea/Cucumber/AppiumCucumber/src" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -150,6 +168,11 @@
           </value>
         </entry>
       </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
     </option>
   </component>
 </project>

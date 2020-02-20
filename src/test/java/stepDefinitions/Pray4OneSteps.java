@@ -30,7 +30,7 @@ public class Pray4OneSteps
     private LoginPage lp;
 
 
-    @Before
+    @Before("@androidAppium")
     public void setup()
     {
         logger= Logger.getLogger("SeleniumCucumber"); //Added logger
@@ -39,7 +39,7 @@ public class Pray4OneSteps
     }
 
     @Given("Open the Android device")
-    public void open_the_desired_device() throws MalformedURLException
+    public void open_the_Android_device() throws MalformedURLException
     {
         //File AppLocation = new File("src");
         //File InstallAppLocation = new File(AppLocation, "app-release (1).apk");
@@ -123,7 +123,7 @@ public class Pray4OneSteps
 
     }
 
-    @After
+    @After("@androidAppium")
     public void tearDown()
     {
         try
@@ -136,4 +136,6 @@ public class Pray4OneSteps
         }
         driver.quit();
     }
+
+
 }

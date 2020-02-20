@@ -3,6 +3,8 @@ package PageObjects;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.ios.IOSElement;
 import io.appium.java_client.pagefactory.*;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -26,12 +28,13 @@ public class LoginPage
         PageFactory.initElements(lacier,this);
     }
 
-//    IOSDriver<IOSElement> iosdriver1;
-//
-//    public LoginPage(IOSDriver<IOSElement> iosdriver1)
-//    {
-//        PageFactory.initElements(new AppiumFieldDecorator(iosdriver1) ,this);
-//    }
+    IOSDriver<IOSElement> iOSdriver;
+
+    public LoginPage(IOSDriver<IOSElement> driver)
+    {
+        this.iOSdriver = driver;
+        PageFactory.initElements(iOSdriver,this);
+    }
 
 
 
@@ -40,7 +43,8 @@ public class LoginPage
             @iOSXCUITBy(xpath = "(//XCUIElementTypeOther[@name=\"START NOW\"])[11]")
     })
     @FindAll({
-            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']")
+            @FindBy(xpath = "//android.widget.TextView[@text ='START NOW']"),
+            @FindBy(xpath = "(//XCUIElementTypeOther[@name='START NOW'])[11]")
     })
     @CacheLookup
     public WebElement StartButton;
@@ -55,7 +59,8 @@ public class LoginPage
     @AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Email']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Email\"])[3]/XCUIElementTypeTextField")
     @FindAll({
-            @FindBy(xpath = "//android.widget.EditText[@text = 'Email']")
+            @FindBy(xpath = "//android.widget.EditText[@text = 'Email']"),
+            @FindBy(xpath = "(//XCUIElementTypeOther[@name='Email'])[3]/XCUIElementTypeTextField")
     })
     @CacheLookup
     public WebElement email;
@@ -99,7 +104,12 @@ public class LoginPage
             @iOSXCUITBy(xpath = "(//XCUIElementTypeOther[@name=\"Password\"])[2]")
 
     })
-    @FindBy(xpath = "//android.widget.EditText[@text = 'Password']")
+    @FindAll({
+            @FindBy(xpath = "//android.widget.EditText[@text = 'Password']"),
+            @FindBy(xpath = "(//XCUIElementTypeOther[@name='Password'])[2]"),
+
+
+    })
     @CacheLookup
     public WebElement password;
 
@@ -149,7 +159,9 @@ public class LoginPage
             @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.widget.TextView"),
             @FindBy(id = "8e07b8da-a1e8-41d4-a7d9-bec4db524bcc"),
             @FindBy(xpath = "(//android.view.ViewGroup)[8]"),
-            @FindBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[699,1355][792,1399]']")
+            @FindBy(xpath = "//*[@class='android.widget.TextView' and @bounds='[699,1355][792,1399]']"),
+            //@FindBy(accessibility = "Login"),
+            @FindBy(xpath ="//XCUIElementTypeOther[@name='Login']")
 
     })
     @CacheLookup
